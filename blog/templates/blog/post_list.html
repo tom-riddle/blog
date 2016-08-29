@@ -1,0 +1,213 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Blog || Anurag Upadhyaya
+		</title>
+		<!-- External Files start -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Material CDN -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.blue_grey-red.min.css" />
+		<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+
+		<!-- Code Highlighter files -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<!-- Style sheet files -->
+		<link rel="stylesheet" href="{% static 'blog/css/home.css' %}">
+
+
+		<!-- External Files End -->
+
+		{% block head %}
+		{% endblock head %}
+
+	</head>
+	<body>
+
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <!-- Header -->
+		  <header class="mdl-layout__header main_header">
+		    <div class="mdl-layout__header-row expand_header">
+		   		<span class="mdl-layout-title">DARKLORD</span>
+				<div class="mdl-layout-spacer"></div>
+				<nav class="mdl-navigation mdl-layout--large-screen-only ">
+					<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'post_list' %}">Home</a>
+					<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'resume' %}">Profile</a>
+					<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'contact_me' %}">Contact</a>
+					{% if user.is_authenticated %}
+						<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'post_new' %}">Add Post</a>	
+						<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'post_draft_list' %}">Drafts</a>
+					{% endif %}
+				</nav>
+		    </div>
+
+		  </header>
+		  <!-- Header ends -->
+
+		  <!-- Navigation Drawer -->
+		  <div class="mdl-layout__drawer">
+		    <span class="mdl-layout-title menu_header">Menu</span>
+		    <nav class="mdl-navigation nav_drawer_menu">
+		      <a class="mdl-navigation__link nav_font" href="{% url 'post_list' %}">Home</a>
+		      <a class="mdl-navigation__link nav_font" href="{% url 'resume' %}">Profile</a>
+		      <a class="mdl-navigation__link nav_font" href="{% url 'contact_me' %}">Contact</a>
+		      {% if user.is_authenticated %}
+					<a class="mdl-navigation__link nav_font" href="{% url 'post_new' %}">Add Post</a>	
+					<a class="mdl-navigation__link nav_font" href="{% url 'post_draft_list' %}">Drafts</a>
+				{% endif %}
+		    </nav>
+		  </div>
+		  <!-- Navigation drawer ends -->
+
+		  <!-- Main -->
+		  <main class="mdl-layout__content">
+		  	<div class="main_block">
+				<br><br>
+				<div class="mdl-grid">
+			        <div class="mdl-cell mdl-cell--8-col " style="margin-left:5%;">
+			            {% for post in posts %}
+							<div class="post_wrapper">
+								<div class="post_list">
+									<a href="{{post.get_absolute_url}}" class="post_heading" >{{post.title}}</a>
+								</div>
+
+								<div>
+									<p class="post_text" style="color:#7e7e7e;margin-left:5%;">{{post.published_date | date:"d M Y"}}</p>
+								</div>
+
+								<div class="mdl-cell mdl-cell--7-col" style="margin-left:20%;margin-right:10%;">
+									<p class="content-markdown">{{post.text | truncatechars:250}}</p>
+									<a href="{{post.get_absolute_url}}" class="post_text post_data" style="float:right;margin-right:5%;">
+										Continue Reading
+									</a>
+								</div>
+							</div>
+							<br><br>
+						{% endfor %}
+			        </div>
+
+			        <div class="mdl-cell mdl-cell--3-col"  id="aside" >
+						
+						<div style="width:250px;text-align:center;">
+
+							<p class="post_heading aside-heading">Search This Blog</p>
+							<form method="GET" class="form-style ">
+								<input autocomplete="off" type="text" size="18" class=" gsc-input inline_text" id="search" name="q" title="search" value="{{request.GET.q}}" style="margin-bottom:10px;" >
+					            <input type="submit" value="Search" id="search-button" class="gsc-search-button inline_text" title="search">
+							</form>
+			    		</div>
+
+			    		<div style="width:250px;text-align:center;margin-bottom:50px;">
+
+							<p class="post_heading aside-heading">About Me</p>
+							<div>
+								<a href="https://www.linkedin.com/in/anurag1993" target="_blank">
+									<img alt="My Photo" height="80" src="/static/blog/images/hunk.jpg" width="80">
+									<p style="font-size:16px;color:#d14836;font-weight:600;">anurag upadhyaya</p>
+								</a>
+								<p style="font-size:15px;font-family: "Arvo", Cambria, Times, serif;">Avid coder, Mobile &amp; Web application developer.Good understanding of Algorithms &amp; Data Structures.
+								Passionate about coding.</p>
+							</div>
+			    		</div>
+
+			    		<div class="sharing" style="width:250px;text-align:center;margin-bottom:50px;">
+
+							<p class="post_heading aside-heading">Share</p>
+							<div id="list">
+				  				<span class='st_facebook_large' displayText='Facebook'></span>
+								<span class='st_twitter_large' displayText='Tweet'></span>
+								<span class='st_linkedin_large' displayText='LinkedIn'></span>
+								<span class='st_googleplus_large' displayText='Google +'></span>
+								<span class='st_blogger_large' displayText='Blogger'></span>
+			    			</div>
+			    		</div>
+
+			        </div>     
+			    </div>
+
+				<!-- <center>
+					<ul class="pagination">
+						{% if posts.has_previous %}
+							<li class="waves-effect">
+								<a href="?page={{posts.previous_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">
+									<i class="material-icons left_right_arrow">chevron_left</i>
+								</a>
+							</li>
+						{% endif %}
+
+						<li class="active">
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect red-text" >
+								{{posts.number}} / {{posts.paginator.num_pages}} Pages
+							</button>
+						</li>
+
+						{% if posts.has_next %}
+							<li class="waves-effect">
+								<a href="?page={{posts.next_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">
+									<i class="material-icons left_right_arrow">chevron_right</i>
+								</a>
+							</li>
+						{% endif %}
+					  </ul>
+				</center> -->
+						</div>
+
+		    <!-- Footer -->
+			<footer class="mdl-mini-footer">
+			    <div class="mdl-mini-footer__left-section">
+				    <div class="mdl-logo">Anurag Upadhyaya</div>
+				    <ul class="mdl-mini-footer__link-list">
+				      <li><a href="#" style="color:#d14836;">Help</a></li>
+				      <li><a href="#" style="color:#d14836;">Privacy &amp; Terms</a></li>
+				    </ul>
+				</div>
+
+				<div id="list_new" class="mdl-mini-footer__right-section">
+					<span class='st_facebook_large' displayText='Facebook'></span>
+					<span class='st_twitter_large' displayText='Tweet'></span>
+					<span class='st_linkedin_large' displayText='LinkedIn'></span>
+					<span class='st_googleplus_large' displayText='Google +'></span>
+					<span class='st_blogger_large' displayText='Blogger'></span>
+				</div>
+
+			</footer>
+			<!-- Footer end -->
+		  </main>
+		  <!-- Main ends -->
+		</div>
+
+		<!-- DISQUS and Markdown Start-->
+		<script id="dsq-count-scr" src="//darklord.disqus.com/count.js" async></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".content-markdown").each(function(){	
+					var content = $(this).text()
+					var markedContent = marked(content)
+					$(this).html(markedContent)
+				})
+				$(".content-markdown img").each(function(){
+					$(this).addClass("img-responsive")
+				})
+			})
+		</script>
+		<!-- DISQUS and Markdown End-->
+
+		
+		<!-- Sharing Buttons -->
+			<script type="text/javascript">var switchTo5x=true;</script>
+			<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+			<script type="text/javascript">stLight.options({publisher: "ur-db3865b0-412e-b4fc-4f74-2ad516efd0c3", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+		<!-- Sharing end -->
+
+
+	</body>
+</html>
+

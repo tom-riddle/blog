@@ -1,0 +1,88 @@
+{% extends 'blog/base.html' %}
+
+{% block head %}
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+{% endblock head %}
+
+{% block content %}
+	<div class="mdl-grid">
+		<div class="post mdl-cell mdl-cell--9-col">
+			{% if user.is_authenticated %}
+				<div style="text-align:right;">
+					<a href="{{post.get_edit_url}}">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">create</i>
+  						 Edit
+					</button>
+					</a>
+
+ 					<a href="{% url 'post_remove' slug=post.slug %}">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">delete</i>
+  						Remove
+					</button>
+					</a>
+
+					{% if not post.published_date %}
+					<a href="{% url 'post_publish' slug=post.slug %}">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+  						Publish
+					</button>
+					</a>
+					{% endif %}
+				</div>
+			{% endif %}
+
+			<h1 id="main_heading">{{post.title}}</h1>
+			
+			{% if post.published_date %}
+				<div style="text-align:center;">
+					<p class="post_text" style="color:#7e7e7e;">{{ post.published_date | date:"d M Y" }}</p>
+				</div>
+				<br>
+			{% endif %}
+
+			{% if post.image %}
+				<center><img src="{{ post.image.url }}" height="400" width="400"></center>
+				<br>
+			{% endif %}
+
+			<p>
+			<div class="content-markdown post_text">{{ post.text }}</div>
+			</p>
+
+			<br><br>
+			
+			{% if post.published_date %}
+
+				<div id="disqus_thread"></div>
+				<script>
+				    
+				    var disqus_config = function () {
+				        this.page.url = post.get_absolute_url;  
+				        this.page.identifier = post.id;
+				    };
+				    
+				    (function() {  
+				        var d = document, s = d.createElement('script');
+				        
+				        s.src = '//darklord.disqus.com/embed.js';
+				        
+				        s.setAttribute('data-timestamp', +new Date());
+				        (d.head || d.body).appendChild(s);
+				    })();
+
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			{% endif %}
+		</div>
+	</div>
+{% endblock content %}
+
+{% block footer %}
+	<script type="text/javascript">stLight.options({publisher: "a3901378-3420-4eb1-9364-714bfc6bd8a6", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+	<script>
+		var options={ "publisher": "a3901378-3420-4eb1-9364-714bfc6bd8a6", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "googleplus", "blogger"]}};
+		var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+	</script>
+{% endblock footer %}

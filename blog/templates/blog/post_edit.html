@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block head %}
+	{{ form.media }}
+{% endblock head %}
+
+{% block content %}
+	<h1 id="main_heading">New Post</h1>
+	<form method="POST" class="form-style" style="margin:5%;" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color-text--white" style="background:#d14836;margin-left:20px;"><label style=" text-transform: capitalize;">Submit</label> </button>
+	</form>
+{% endblock content %}
+

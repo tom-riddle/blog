@@ -1,0 +1,279 @@
+h1{
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Arvo", Cambria, Times, serif;
+  text-rendering: optimizelegibility;
+  text-align: center;
+  font-weight: 500;
+  font-size: 38px;
+  color:#d14836;
+}
+
+
+
+.profilePicture{
+  height:250px;
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4%;
+}
+
+.icons{
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  width: 64px;
+  max-width: 8%
+}
+
+h3{
+  font-family: "Arvo", Cambria, Times, serif;
+  text-rendering: optimizelegibility;
+  font-weight: 550;
+  font-size: 35px;
+}
+
+h5{
+  font-family: "Arvo", Cambria, Times, serif;
+  text-rendering: optimizelegibility;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+p{
+  font-family: "Arvo", Cambria, Times, serif;
+  text-rendering: optimizelegibility;
+  margin:0 auto;
+  font-weight: 500;
+  color:#696969;
+  font-size: 18px;
+}
+
+main{
+  /*background-color: #E6E6FA;*/
+}
+
+.small_dt{
+  font-family: "Arvo", Cambria, Times, serif;
+  text-rendering: optimizelegibility;
+  margin:0 auto;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#ski{
+  border-bottom: 1px solid #d3d3d3;
+}
+
+#line{
+  background-color: #004D40;
+}
+
+#box1{
+  background-color: #d14836;
+  width: 20px;
+  margin-right: 5%;
+}
+
+#box2{
+  background-color: #d14836;
+  width: 20px;
+  margin-right: 5%;
+}
+
+#box3{
+  background-color: #d14836;
+  width: 20px;
+  margin-right: 5%;
+}
+
+#box4{
+  background-color: #d14836;
+  width: 15px;
+  margin-right: 4%;
+}
+
+#box44{
+  background-color: #d14836;
+  width: 15px;
+  margin-right: 5%;
+}
+
+#box23{
+  background-color: #00ffff;
+  width: 15px;
+  margin-right: 4%;
+}
+
+#box5{
+  background-color: #d14836;
+  width: 20px;
+  margin-right: 5%;
+}
+
+.margin-default{
+  margin-left: 5%;
+  margin-right: 4%;
+  margin-bottom:1%;
+}
+
+.margin-grid{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10%;
+}
+
+.margin-grid2{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10%;
+  margin-top: -5%;
+}
+
+table{
+  width: 100%;
+}
+
+.navigation-font{
+  font-family: 'Lobster';
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.navigation-font-menu{
+  font-family: 'Lobster';
+  font-size: 20px;
+}
+
+.mdl-navigation__link{
+  color:#ffffff;
+}
+
+.mdl-card {
+    max-width: 120%;
+    height: 30%;
+}
+
+.new-card{
+  max-width: 120%;
+  height:45%;
+}
+
+.mdl-card__supporting-text{
+  font-family: "Arvo", Cambria, Times, serif;
+  text-rendering: optimizelegibility;
+  color:#000000;
+  font-size: 18px;
+}
+
+.mdl-card__title-text{
+  font-size:14px;
+  font-style: bold;
+  color:#000;
+}
+
+.mdl-media{
+  height:100%;
+}
+
+#card1{
+  background-image: url('https://d13yacurqjgara.cloudfront.net/users/32742/screenshots/1009938/files-html_-css_-php_-js.jpg');
+  background-size:cover;
+}
+
+#card2{
+  background-image: url('http://whyweweb.com/wp-content/uploads/2012/10/Android-VS-Apple.png');
+  background-size:cover;
+}
+
+#card3{
+  background-image: url('/static/resume/images/algorithm.png');
+  background-size:cover;
+}
+
+#card4{
+  background-image: url('https://3.bp.blogspot.com/-6NXU8Xfez18/VdVflsf_ovI/AAAAAAAA5-c/JXsIFmBivmE/s1600/python-programming.jpg');
+  background-size:cover;
+}
+
+#card5{
+  background-image: url('http://www.myiconfinder.com/uploads/iconsets/e42f329d0832c5a8369e6006056ad82f.png');
+  background-size:cover;
+}
+
+#card6{
+  background-image: url('https://4.bp.blogspot.com/-CWSV3KCcm-8/Tt7_nzoYnEI/AAAAAAAAAjI/jJbfrB4b-A4/s1600/Ubuntu-Human-Beings-Wallpaper.jpg');
+  background-size:cover;
+}
+
+#card7{
+  background-image: url('/static/resume/images/logo.png');
+  background-size:cover;
+  background-color: #ffffff;
+}
+
+#card8{
+  background-image: url('http://hearingbetterohio.com/wp-content/uploads/2014/05/sound-waves.jpg');
+  background-size:cover;
+}
+
+#card9{
+  background-image: url('http://lazyprogrammer.me/wp-content/uploads/2016/05/635965173527052708-540999202_wallpaper-2870969.jpg');
+  background-size:cover;
+}
+
+#card10{
+  background-image: url('/static/resume/images/app_icon_1.png');
+  background-size:cover;
+}
+
+#card11{
+  background-image: url('http://a1619.phobos.apple.com/us/r30/Purple2/v4/1b/ae/29/1bae29df-fb37-c4de-d71a-e76e9ec32f04/mzl.ipgyqrpm.jpg');
+  background-size:cover;
+}
+
+#view-source {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+}
+
+
+.social-icons {
+    padding: 5px 0 15px 0;
+}
+
+.social-icons ul {
+    margin: 0;
+}
+
+.social-icons ul li {
+    font-size: 28px;
+    display: inline-block;
+    margin: 0;
+}
+
+.social-icons ul li a {
+    display: block;
+    color: #828080;
+    text-shadow: none;
+}
+
+.social-icons ul li a:hover {
+    display: block;
+    color: #FFF;
+}
+
+.listing{
+  margin-right:100px;
+}
+
+.test{
+  font-size: 16px;
+  color: #fff;
+}

@@ -1,0 +1,389 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Portfolio || Anurag Upadhyaya
+		</title>
+
+		<!-- Courtsey : Jyotman Singh -->
+
+		<!-- External Files start -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Material CDN -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.blue_grey-red.min.css" />
+		<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+
+		<!-- Code Highlighter files -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<!-- Style sheet files -->
+		<link rel="stylesheet" href="{% static 'resume/css/resume.css' %}">
+		<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+		<!-- External Files End -->
+
+		{% block head %}
+		{% endblock head %}
+
+	</head>
+	<body>
+
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <!-- Header -->
+		  <header class="mdl-layout__header main_header">
+		    <div class="mdl-layout__header-row expand_header">
+		   		<span class="mdl-layout-title">DARKLORD</span>
+				<div class="mdl-layout-spacer"></div>
+				<nav class="mdl-navigation mdl-layout--large-screen-only ">
+					<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'post_list' %}">Home</a>
+					<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'resume' %}">Profile</a>
+					<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'contact_me' %}">Contact</a>
+					{% if user.is_authenticated %}
+						<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'post_new' %}">Add Post</a>	
+						<a class="mdl-navigation__link navigation-font menu_text" href="{% url 'post_draft_list' %}">Drafts</a>
+					{% endif %}
+				</nav>
+		    </div>
+
+		  </header>
+		  <!-- Header ends -->
+
+		  <!-- Navigation Drawer -->
+		  <div class="mdl-layout__drawer">
+		    <span class="mdl-layout-title menu_header">Menu</span>
+		    <nav class="mdl-navigation nav_drawer_menu">
+		      <a class="mdl-navigation__link nav_font" href="{% url 'post_list' %}">Home</a>
+		      <a class="mdl-navigation__link nav_font" href="{% url 'resume' %}">Profile</a>
+		      <a class="mdl-navigation__link nav_font" href="{% url 'contact_me' %}">Contact</a>
+		      {% if user.is_authenticated %}
+					<a class="mdl-navigation__link navigation-font" href="{% url 'post_new' %}">Add Post</a>	
+					<a class="mdl-navigation__link navigation-font" href="{% url 'post_draft_list' %}">Drafts</a>
+				{% endif %}
+		    </nav>
+		  </div>
+		  <!-- Navigation drawer ends -->
+
+		  <!-- Main -->
+		  <main class="mdl-layout__content">
+		  	<div class="main_block">
+					
+			    <div class="page-content">
+
+			  		<!-- Home Starts Here -->
+			  		<div id="home">
+			    	<img src="/static/resume/images/profile.gif" class="profilePicture" />
+			    	<h1>Anurag Upadhyaya</h1>
+			    	<div class="social-icons" style="text-align:center; margin-bottom:3%;">
+			            <ul>
+			                <li class="listing" style="margin-right:20px;"><a href="http://facebook.com/anurag.upadhyaya" target="_blank"><img src="/static/resume/images/facebook.png" alt="facebook"/></a></li>
+			                <li class="listing" style="margin-right:20px;"><a href="https://plus.google.com/102325892369896333876" target="_blank"><img src="/static/resume/images/google.png" alt="google plus"/></a></li>
+			                <li class="listing" style="margin-right:20px;"><a href="https://www.linkedin.com/in/anurag-upadhyaya-89163793" target="_blank"><img src="/static/resume/images/linkedin.png" alt="linkedin"/></a></li>
+			                <li class="listing" style="margin-right:20px;"><a href="http://github.com/tom-riddle" target="_blank"><img src="/static/resume/images/github.png" alt="github"/></a></li>
+			            </ul>
+			    	</div>
+			    	</div>
+			    	<!-- Home Ends Here -->
+
+
+			    	<!-- Skills Start here -->
+					<h3 id="ski" class="margin-default">Skills</h3>
+					<div class="mdl-grid margin-grid" style="align:center;margin-right:10%;margin-top:5%;">
+
+					<div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box23">
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--7-col-tablet">
+					  	<div class="mdl-card mdl-shadow--2dp">
+						  <div class="mdl-card__title mdl-card--expand" id="card1">
+						  </div>
+						  <div class="mdl-card__supporting-text">
+						    C/C++
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  </div>
+
+					 
+
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--7-col-tablet">
+					  	<div class="mdl-card mdl-shadow--2dp">
+						  <div class="mdl-card__title mdl-card--expand" id="card3">
+						  </div>
+						  <div class="mdl-card__supporting-text">
+						    Algorithms &amp; Data Structures
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  </div>
+
+					   <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--7-col-tablet">
+					  	<div class="mdl-card mdl-shadow--2dp">
+						  <div class="mdl-card__title mdl-card--expand" id="card2">
+						  </div>
+						  <div class="mdl-card__supporting-text">
+						    Java/Android
+						  </div>
+						</div>
+					  </div>
+
+					</div>
+					<div class="mdl-grid margin-grid2" style="align:center;margin-right:10%;">
+
+					<div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box23">
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--7-col-tablet">
+					  	<div class="mdl-card mdl-shadow--2dp">
+						  <div class="mdl-card__title mdl-card--expand" id="card4">
+						  </div>
+						  <div class="mdl-card__supporting-text">
+						    Python/Django
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--7-col-tablet">
+					  	<div class="mdl-card mdl-shadow--2dp">
+						  <div class="mdl-card__title mdl-card--expand" id="card5">
+						  </div>
+						  <div class="mdl-card__supporting-text">
+						    MySQL
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone mdl-cell--7-col-tablet">
+					  	<div class="mdl-card mdl-shadow--2dp">
+						  <div class="mdl-card__title mdl-card--expand" id="card6">
+						  </div>
+						  <div class="mdl-card__supporting-text">
+						    Linux
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<!-- Skills End Here -->
+
+
+					<!-- Experience starts here -->
+					<h3 id="ski" class="margin-default">Work Experience</h3>
+					<div class="mdl-grid margin-grid">
+					<!--Desktop -->
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<h5><strong><i>Rare Media Company</i></strong>
+					  	<p style="color:#7e7e7e;"> (Jan 16- Apr 16)</p>
+					  	</h5>
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<img src="/static/resume/images/rmc.png" width="80" height="80">
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box44">
+					  </div>
+					  <div class="mdl-cell mdl-cell--11-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<p>Extensively used Google Maps and Location Services for real time tracking.</p>
+						<p>Used Geo-coding and Directions API to find the exact location.</p>
+						<p>Integrated social logins into the app and other important SDKs.</p>
+						<p>Designed the User Interface for the application using Material Design.</p>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<h5 style="margin-top:4%;"><strong><i>The Testament</i></strong><p style="color:#7e7e7e;"> (Aug 15- Dec 15)</p></h5>
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<img width="40%" src="/static/resume/images/app_icon_1.png">
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box44">
+					  </div>
+					  <div class="mdl-cell mdl-cell--11-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<p>Working through the complete development cycle of the application.</p>
+						<p>Used Sensors to build a Smart Notification System that uses accelerometer to detect level of activity.</p>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<h5><strong><i>Refiral Solutions Pvt Ltd</i></strong><p style="color:#7e7e7e;"> (Oct 14- Jan 15)</p></h5>
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<img width="40%" src="/static/resume/images/refiral.jpg">
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--stretch mdl-cell--hide-phone mdl-cell--hide-tablet mdl-shadow--2dp" id="box44">
+					  </div>
+					  <div class="mdl-cell mdl-cell--11-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+					  	<p>Business Development and Market Reasearch</p>
+						<p>Responsible for generating leads and converting them.</p>
+					  </div>
+
+
+					  <!-- For Mobile and Tablet -->
+					  <div class="mdl-cell mdl-cell--stretch mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--1-col-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--2-col-phone mdl-cell--hide-desktop mdl-cell--3-col-tablet">
+					  	<p><strong>Rare Media Company</strong><br> <p style="color:#7e7e7e;">(Jan 16-Apr 16)</p></p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--1-col-tablet">
+					  </div>
+					  <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--2-col-phone mdl-cell--3-col-tablet">
+					  	<img width="50" height="50" src="/static/resume/images/rmc.png">
+					  </div>
+					  <div class="mdl-cell mdl-cell--stretch mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--1-col-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--7-col-tablet" >
+					  	<p class="small_dt">Extensively used Google Maps and Location Services for real time tracking.</p>
+						<p class="small_dt">Used Geo-coding and Directions API to find the exact location.</p>
+						<p class="small_dt">Integrated social logins into the app and other important SDKs.</p>
+						<p class="small_dt">Designed the User Interface for the application using Material Design.</p>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--stretch mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--1-col-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col-phone mdl-cell--hide-desktop mdl-cell--3-col-tablet">
+					  	<p><strong>The Testament</strong><br> <p style="color:#7e7e7e;">(Aug 16-Dec 16)</p> </p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--3-col-tablet">
+					  </div>
+					  <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  	<img width="100%" src="/static/resume/images/testament.jpg">
+					  </div>
+					  <div class="mdl-cell mdl-cell--stretch mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--1-col-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--7-col-tablet">
+					  	<p class="small_dt">Working through the complete development cycle of the application.</p>
+						<p class="small_dt">Used Sensor to build a Smart Notification System that uses accelerometer to detect level of activity.</p>
+					  </div>
+
+					  <div class="mdl-cell mdl-cell--stretch mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--1-col-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col-phone mdl-cell--hide-desktop mdl-cell--3-col-tablet">
+					  	<p><strong>Refiral Solutions Pvt Ltd</strong><br><p style="color:#7e7e7e;"> (Oct 14-Jan 15)</p></p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--3-col-tablet">
+					  </div>
+					  <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  	<img width="90%" src="/static/resume/images/refiral.jpg">
+					  </div>
+					  <div class="mdl-cell mdl-cell--stretch mdl-cell--hide-desktop mdl-cell--hide-phone mdl-cell--1-col-tablet mdl-shadow--2dp" id="box4">
+					  </div>
+					  <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--7-col-tablet">
+					  	<p class="small_dt">Business Development and Market Reasearch</p>
+						<p class="small_dt">Responsible for generating leads and converting them.</p>
+					  </div>
+					</div>
+					<!-- EXPERIENCE ENDS HERE -->
+
+
+					<!-- Hobbies starts Here -->
+					<h3 id="int" class="margin-default">Hobbies</h3>
+			    	<hr class="margin-default">
+					<div class="mdl-grid margin-grid">
+
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  <img src="https://maxcdn.icons8.com/Color/PNG/24/Sports/cricket-24.png" title="Cricket" width="48">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone mdl-cell--3-col-tablet">
+					  <p style="line-height:2em">Cricket</p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  <img src="https://maxcdn.icons8.com/Color/PNG/48/Programming/code-48.png" title="Code" width="48">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone mdl-cell--3-col-tablet">
+					  <p style="line-height:2em">Coding</p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  <!-- Car icon by Icons8 -->
+					  <img src="https://maxcdn.icons8.com/office/PNG/40/Transport/car-40.png" title="Car" width="40">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone mdl-cell--3-col-tablet">
+					  <p style="line-height:2em">Driving</p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  <img src="https://maxcdn.icons8.com/Color/PNG/48/Music/musical_notes-48.png" title="Musical Notes" width="48">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone mdl-cell--3-col-tablet">
+					  <p style="line-height:2em">Music</p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  <img src="https://maxcdn.icons8.com/office/PNG/40/User_Interface/readin-40.png" title="Reading" width="40">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone mdl-cell--3-col-tablet">
+					  <p style="line-height:2em">Reading</p>
+					  </div>
+					  <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+					  <img class="icon icons8-Ds3-Tool" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADwklEQVRYR+2XSUwTURjH/9OxbAGsI6UWWkREwbgSNyBKiYlLUCMHkcRoolRvKnJxOyhw0ISLoN6UBqMxUTxAosTlApgoggTcIipLpSAtxVKkylLa8c0rVUZbhaaGxDhJM2/58v1/7/u+9+aVwTQ/zDTr4z/ALxHYeeQU/zfTcvvCWZGmR4DMrRmIVij8ytFtMqHibhUmBXBIm4P58+b5FaCtowOXSnX+A2gyORAvY/GoywHTFyeFXadisYCTeAT3G4AgnPtwhIqUbAz83nb3kxTsPw4wSBbfZnXQVc4nKWglbXclC/2wQM+l8++k4L3FiQuNdthGeRxZJf37NcCeuwnmXRcQFgLHsSzwqohfYixA2ew83RXh5j6wReXA4FcgQYWxE9nU3ucUBCXngg0Nok5GT++FPW3Jb88Hae0rBBReozYO2zCG60p8Bwh5/QHc/UaR4IDBjCGrzSNEsCwUM9Vy0Zxl80p8XTx36hFYyCmgLL1HnR17W03fRQnp4Efs+FT5GE7bkEhIEhqMiF0aOnZe30DfebGrwUsYGPdvxjuLafInYbRSiTUjAdgNjornxa5yOe5oRFGiBv1V9bAbLSIA6RwOszLWUPEN3Fw61zBgxAH1MtyABfWBo+ju6ZnEUXz4JF3uQaN0wabFS6NEAPpnNAqTBagf6MFB9XLcaXlpuCq3twt+b188lz6R3OuF5NPKvGJue2quLym4bHhONQRxIWX9DxpKZjeePyoK2XjHK4BRpS0OXhiVG7Z2EZhAKTEn1wThm0Ny6iRbzNbUiuHWj9RNUHwUQpPiISFbFU5iR79HDBUffPqG2HUXKDp1+VMDUOdUMwyjEYqLJb+wtYloDxrDzZ4WpHEqaLgY9N2qoT6F4quxdKLW0oVsZSLihmcQ4RayDYdosfI8XzPHoBOF3g3jPQLjAG7DyJwtKGx9jCozTSXqUvbQWhAeofiSn1yn7WxlAq3+Xp1rBwmPTwAmdU4zGGa520lElgaP7GYcf1uLDHkcTsenigAEuBqLgYynYL1Ujr5yV3R8B4jRiu6GQp7D05b9SCOPSqYgK5MKnCmvICnf4Z78XPvie324xxSdpR6j7TUFpp8ASA1WRmq3kUoeixWcMvlZ1T9oCER+ebqrP0PfW3qneCKQMDplAGOMVk/oXCcKMBDw2RE7y1pmnSjqrd0v2ycbDWf1ZH7meA6eKwy6FZ7svUagN3rfCifLVhADmcTJZMq7rohW/CcQs+pAulPCV5A8WiUOR2Zkd1nzlAD+JOCv+f9/zaY9At8A9jz2MFi+AXcAAAAASUVORK5CYII=" width="32" height="32">
+					  </div>
+					  <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-phone mdl-cell--3-col-tablet">
+					  <p style="line-height:2em">Gaming</p>
+					  </div>
+					</div>
+					<!-- Hobbies Ends Here -->
+			    </div>
+
+			</div>
+
+		    <!-- Footer -->
+			<footer class="mdl-mini-footer">
+			    <div class="mdl-mini-footer__middle-section">
+				    <div class="mdl-logo">Anurag Upadhyaya</div>
+				    <ul class="mdl-mini-footer__link-list">
+				      <li><a href="#" style="color:#d14836;">Help</a></li>
+				      <li><a href="#" style="color:#d14836;">Privacy &amp; Terms</a></li>
+				    </ul>
+				</div>
+
+				<div class="mdl-mini-footer__right-section" style="margin-right:3%;">
+				    <a href="https://icons8.com" style="color:#d14836;">Icon pack by Icons8</a>
+				</div>
+			</footer>
+			<!-- Footer end -->
+		  </main>
+		  <!-- Main ends -->
+		</div>
+
+		<!-- DISQUS and Markdown Start-->
+		<script id="dsq-count-scr" src="//darklord.disqus.com/count.js" async></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".content-markdown").each(function(){	
+					var content = $(this).text()
+					var markedContent = marked(content)
+					$(this).html(markedContent)
+				})
+				$(".content-markdown img").each(function(){
+					$(this).addClass("img-responsive")
+				})
+			})
+		</script>
+		<!-- DISQUS and Markdown End-->
+
+		<!-- Sharing Buttons -->
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher: "a3901378-3420-4eb1-9364-714bfc6bd8a6", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+		<!-- Sharing end -->
+	</body>
+</html>

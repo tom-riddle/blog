@@ -1,0 +1,156 @@
+/*.expand_header{
+	height: 80px;
+}*/
+
+.mdl-layout__drawer-button{
+	padding: 0px;
+	margin: 2px;
+}
+div{
+	word-wrap: break-word;
+}
+#main_heading{
+	font-family: "Arvo", Cambria, Times, serif;
+	text-rendering: optimizelegibility;
+	text-align: center;
+	font-weight: 500;
+	font-size: 35px;
+	color:#d14836;
+}
+p{
+	font-family: "Arvo", Cambria, Times, serif;
+	text-rendering: optimizelegibility;
+	color: #000000;
+	font-weight: 500;
+	font-size:17px;
+}
+
+.menu_text{
+	font-family: "Arvo", Cambria, Times, serif;
+	text-rendering: optimizelegibility;
+	text-decoration: none;
+	margin-top: 5px;
+	font-size: 18px;
+	color:#ffffff;
+	padding: 10px;
+	color:black;
+	text-align: center;
+}
+.menu_text:hover{
+	color:#d14836;
+	background-color: #ffffff;
+}
+.menu_header{
+	padding-top:5px; 
+	height: 60px;
+	color: #fff;
+	background-color: #da4453;
+}
+.nav_drawer_menu{
+	color:black;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.nav_font{
+	font-family: "Arvo", Cambria, Times, serif;
+	text-rendering: optimizelegibility;
+	font-weight: 500;
+	font-size:18px;
+	color:#d14836;
+}
+.pagination{
+	margin-top: 50px;
+	text-align: center;
+}
+ul li{
+	display: inline;
+}
+a{
+	text-decoration: none;
+}
+.post_wrapper{
+	margin-right: 5%;
+}
+.post_heading{
+	font-family: "Arvo", Cambria, Times, serif;
+	text-rendering: optimizelegibility;
+	text-decoration: none;
+	font-weight: 500;
+	font-size:25px;
+	color:#d14836;
+}
+.post_list{
+	border-bottom: 1px solid #d14836;
+	width: 100%;
+	padding-bottom: 5px;
+	margin-bottom: 1%;
+	font-size:25px;
+	color:#d14836;
+}
+.post_text{
+	font-family: "Arvo", Cambria, Times, serif;
+	text-rendering: optimizelegibility;
+	text-decoration: none;
+	font-weight: 500;
+	font-size:17px;
+}
+.post_data{
+	font-size:15px;
+	color:#d14836;
+	border-bottom: 1px dotted #d14836;
+}
+.verticalLine {
+    border-left: thin solid #D3D3D3;
+}
+.inline_text{
+	display: inline;
+}
+#list{
+	margin-top: 20%;
+}
+#list ul li a{
+    font-family: "Arvo", Cambria, Times, serif;
+	text-rendering: optimizelegibility;
+	font-weight: 500;
+	font-size:17px;
+	color:black;
+}
+.post{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+#disqus_thread{
+	margin: 2%;
+}
+footer{
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
+#aside{
+	right: 0;
+	float:right;
+	margin-top:5%;
+	margin-right: 5%;
+	position: fixed;
+}
+#contact_form{
+	text-align: center;
+
+}
+
+@media screen and (max-width: 840px){
+	.verticalLine{
+		visibility: hidden;
+	}
+	#aside{
+		border: 1px solid #d3d3d3;
+		width: 100%;
+		padding: 5%;
+		margin-bottom: 15%;
+		position: relative;
+	}
+	#list{
+		margin-top:5%;
+	}
+}

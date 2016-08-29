@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+		<!-- Courtsey:Jyotman Singh -->
+		<h1 id="main_heading">Drop a Message</h1>
+		<div style="margin:3%;">
+			
+			<form method="post" style="text-align:center;">
+				<div class="mdl-textfield mdl-js-textfield" style="border: 1px solid #d3d3d3;width:300px;">
+		    		{% csrf_token %}
+	            	{{ form }}
+		    	</div>
+			    <div style="margin-top: 2%; margin-bottom: 5%">
+			    	<input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color-text--white" style="background:#d14836;" type="submit" title="Submit" />
+			    </div>	
+		   	</form>
+	   	</div>
+{% endblock content %}}
